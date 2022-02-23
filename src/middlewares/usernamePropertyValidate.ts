@@ -26,7 +26,19 @@ const validateIfNameIsAString = (
   next();
 };
 
+const validateNameLength = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Response | void => {
+  const { username }: IUser = req.body;
+  if (username.length < 3) return res.status(422).json({ error: ERROR.ER_USERNAME_LENGTH });
+
+  next();
+};
+
 export {
   validateIfNameExist,
   validateIfNameIsAString,
+  validateNameLength,
 };
