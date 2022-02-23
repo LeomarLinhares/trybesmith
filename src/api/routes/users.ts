@@ -1,6 +1,6 @@
 import 'express-async-errors';
 import { Router } from 'express';
-import { createUser } from '../../controllers/usersController';
+import createUser from '../../controllers/usersController';
 
 import {
   validateClasseLength,
