@@ -13,6 +13,20 @@ const validateIfNameExist = (
   next();
 };
 
+const validateIfNameIsAString = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Response | void => {
+  const { username }: IUser = req.body;
+  if (typeof username !== 'string') {
+    return res.status(422).json({ error: ERROR.ER_USERNAME_NOT_A_STRING });
+  }
+
+  next();
+};
+
 export {
   validateIfNameExist,
+  validateIfNameIsAString,
 };
