@@ -6,7 +6,7 @@ import userModel from '../models/userModel';
 
 dotenv.config();
 
-const secret: string = process.env.JWT_SECRET as string;
+const secret: string = process.env.JWT_SECRET || 'segredoSecretoDoServer';
 
 const JWTConfig: SignOptions = {
   expiresIn: '7d',
