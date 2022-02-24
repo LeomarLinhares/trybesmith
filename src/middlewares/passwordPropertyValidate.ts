@@ -1,6 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import ERROR from './error';
 import { IUser } from '../interfaces/IUser';
+import userModel from '../models/userModel';
+import { IPayload } from '../interfaces/IPayload';
 
 const validateIfPasswordExist = (
   req: Request,
@@ -37,8 +39,21 @@ const validatePasswordLength = (
   next();
 };
 
+const validateIfPasswordAndUsernameMatch = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<Response | void> => {
+  const userInfo: IPayload[] = await userModel
+    .getByUsernameAndPassword(req.body.username, req.body.password);
+  if (userInfo.length === 0) return res.status(401).json({ error: 'Username or password invalid' });
+
+  next();
+};
+
 export {
   validateIfPasswordExist,
   validateIfPasswordIsAString,
   validatePasswordLength,
+  validateIfPasswordAndUsernameMatch,
 };
