@@ -46,7 +46,7 @@ const validateIfPasswordAndUsernameMatch = async (
 ): Promise<Response | void> => {
   const userInfo: IPayload[] = await userModel
     .getByUsernameAndPassword(req.body.username, req.body.password);
-  if (userInfo.length === 0) return res.status(401).json({ error: 'Username or password invalid' });
+  if (userInfo.length === 0) return res.status(401).json({ error: ERROR.ER_USERNAME_AND_PASSWORD });
 
   next();
 };

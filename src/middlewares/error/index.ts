@@ -11,5 +11,5 @@ export default {
   ER_LEVEL_REQUIRED: 'Level is required',
   ER_LEVEL_NOT_A_NUMBER: 'Level must be a number',
   ER_LEVEL_CANNOT_BE_ZERO_OR_LESS: 'Level must be greater than 0',
-
+  ER_USERNAME_AND_PASSWORD: 'Username or password invalid',
 };
