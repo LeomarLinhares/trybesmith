@@ -17,9 +17,9 @@ import {
   validatePasswordLength,
 } from '../../middlewares';
 
-const users = Router();
+const usersRoute = Router();
 
-users.post(
+usersRoute.post(
   '/users', 
   validateIfNameExist,
   validateIfNameIsAString,
@@ -36,4 +36,4 @@ users.post(
   createUser,
 );
 
-export default users;
+export default usersRoute;
