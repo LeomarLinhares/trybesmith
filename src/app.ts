@@ -1,10 +1,12 @@
 import express from 'express';
-import users from './api/routes/users';
+import loginRoute from './api/routes/login';
+import usersRoute from './api/routes/users';
 
 const app = express();
 
 app.use(express.json());
 
-app.use(users);
+app.use(usersRoute);
+app.use(loginRoute);
 
 export default app;
