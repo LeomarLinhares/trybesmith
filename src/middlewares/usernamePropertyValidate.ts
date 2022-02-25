@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import ERROR from './error';
 import { IUser } from '../interfaces/IUser';
 
-const validateIfNameExist = (
+const validateIfUsernameExist = (
   req: Request,
   res: Response,
   next: NextFunction,
@@ -13,7 +13,7 @@ const validateIfNameExist = (
   next();
 };
 
-const validateIfNameIsAString = (
+const validateIfUsernameIsAString = (
   req: Request,
   res: Response,
   next: NextFunction,
@@ -26,7 +26,7 @@ const validateIfNameIsAString = (
   next();
 };
 
-const validateNameLength = (
+const validateUsernameLength = (
   req: Request,
   res: Response,
   next: NextFunction,
@@ -38,7 +38,7 @@ const validateNameLength = (
 };
 
 export {
-  validateIfNameExist,
-  validateIfNameIsAString,
-  validateNameLength,
+  validateIfUsernameExist,
+  validateIfUsernameIsAString,
+  validateUsernameLength,
 };

@@ -9,21 +9,21 @@ import {
   validateIfLevelExist,
   validateIfLevelIsANumber,
   validateIfLevelIsNotZero,
-  validateIfNameExist,
-  validateIfNameIsAString,
   validateIfPasswordExist,
   validateIfPasswordIsAString,
-  validateNameLength,
+  validateIfUsernameExist,
+  validateIfUsernameIsAString,
   validatePasswordLength,
+  validateUsernameLength,
 } from '../../middlewares';
 
 const usersRoute = Router();
 
 usersRoute.post(
   '/users', 
-  validateIfNameExist,
-  validateIfNameIsAString,
-  validateNameLength,
+  validateIfUsernameExist,
+  validateIfUsernameIsAString,
+  validateUsernameLength,
   validateIfClasseExist,
   validateIfClasseIsAString,
   validateClasseLength,
