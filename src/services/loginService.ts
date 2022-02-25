@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 import JWT from 'jsonwebtoken';
-import { IErrorMessage } from '../interfaces/IErrorMessage';
 import { IPayload } from '../interfaces/IPayload';
 import { IToken } from '../interfaces/IToken';
 import userModel from '../models/userModel';
@@ -13,7 +12,7 @@ export default {
   login: async (
     usernameReq: string,
     passwordReq: string,
-  ): Promise<IToken | IErrorMessage | void> => {
+  ): Promise<IToken | void> => {
     try {
       const [{ id, username }]: IPayload[] = await userModel
         .getByUsernameAndPassword(usernameReq, passwordReq);
