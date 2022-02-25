@@ -12,4 +12,10 @@ export default {
   ER_LEVEL_NOT_A_NUMBER: 'Level must be a number',
   ER_LEVEL_CANNOT_BE_ZERO_OR_LESS: 'Level must be greater than 0',
   ER_USERNAME_AND_PASSWORD: 'Username or password invalid',
+  ER_NAME_REQUIRED: 'Name is required',
+  ER_NAME_NOT_A_STRING: 'Name must be a string',
+  ER_NAME_LENGTH: 'Name must be longer than 2 characters',
+  ER_AMOUNT_REQUIRED: 'Amount is required',
+  ER_AMOUNT_NOT_A_STRING: 'Amount must be a string',
+  ER_AMOUNT_LENGTH: 'Amount must be longer than 2 characters',
 };
